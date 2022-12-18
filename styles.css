@@ -40,6 +40,7 @@ button {
     background-color: var(--medlight);
     color: var(--light);
     border-radius: 20px;
+    border-color: white;
     padding: 1em;
 }
 
@@ -102,6 +103,8 @@ button {
     -moz-transition: opacity 1s ease-in-out;
     -o-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
+    min-width: 100%;
+    width: 13em;
 }
 
 #options img {
