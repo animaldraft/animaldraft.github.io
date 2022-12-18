@@ -35,7 +35,15 @@ function stars(starcount) {
     } if (starcount >=5) {
         document.getElementById("star5").classList.add("checked");
     }
-    
+    const player_count = playerspicked.length;
+    if (player_count > 11) {
+
+    } else {
+        const chem_value = Math.round(player_count*9.1);
+        document.getElementById("chem-score").innerHTML = chem_value;
+        const chem_str_value = chem_value+'%';
+        document.getElementById("bar-1").style.setProperty("width", chem_str_value);
+    }
 }
 
 function rating() {

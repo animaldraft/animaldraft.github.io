@@ -21,8 +21,10 @@
                 <input type="text" placeholder="TEAM NAME">
             </div>
             <div id="stats">
-                <p>Rating:</p>
-                <p id="rating-score">0</p>
+                <div class="stats-row">
+                    <p>Rating:&nbsp;</p>
+                    <p id="rating-score">0</p>
+                </div>
                 <div id="rating-stars">
                     <span id="star1" class="fa fa-star checked"></span>
                     <span id="star2" class="fa fa-star"></span>
@@ -30,7 +32,17 @@
                     <span id="star4" class="fa fa-star"></span>
                     <span id="star5" class="fa fa-star"></span>
                 </div>
+                <div class="stats-row" id="chem">
+                    <p>Chem:&nbsp;</p>
+                    <p id="chem-score">0</p>
+                </div>
+                <div class="rating-chem-bar">
+                    <div class="bar">
+                        <div class="bar-filled" id="bar-1">
 
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="selection" class="">
                 <p class="select-main">Please select a button below to choose a player</p>

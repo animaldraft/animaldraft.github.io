@@ -1,17 +1,16 @@
 :root {
-   --light: #f8f3bd;
-    --medlight: #b69f65;
-    --dark: #102605;
+   --light: #FDFDFF;
+    --medlight: rgb(218, 252, 251);
+    --dark: #393D3F;
     --grey: #4a4c49;
-    --altdark: #456569;
+    --altdark: #62929E;
     --altlight: #99cbb2;
-    color: white;
+    color: #393d3f;
 }
 
 body {
     color: var(--light);
-    background: rgb(38, 55, 31);
-    background: radial-gradient(circle, rgba(66,98,55,1) 0%, rgba(0,0,0,1) 100%);
+    background: rgb(228, 255, 228);
     font-family: 'Bebas Neue', cursive;
     font-family: 'Bellefair', serif;
     font-family: 'Rubik', sans-serif;
@@ -21,15 +20,12 @@ body {
 input {
     background-color: var(--light);
     color: var(--altdark);
+    font-family: 'Bebas Neue', cursive;
 }
 
 h1, h2, input {
     text-transform: uppercase;
     font-size: medium;
-}
-
-h2 {
-    font-style: italic;
 }
 
 input {
@@ -38,10 +34,11 @@ input {
 
 button {
     background-color: var(--medlight);
-    color: var(--light);
+    color: var(--dark);
+    font-family: 'Bebas Neue', cursive;
     border-radius: 20px;
     border-color: white;
-    padding: 1em;
+    padding: 0.5em 1.2em;
 }
 
 .closediv {
@@ -69,7 +66,8 @@ button {
     align-content: center;
     background-color: var(--grey);
     width: 100vw;
-    height: 3em;
+    height: 3.5em;
+    padding: 0 1em;
     top: 0;
     margin: 0;
 }
@@ -127,10 +125,17 @@ button {
 
 #stats {
     background-color: var(--altdark);
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    top: 3em;
+    top: 3.5em;
     left: 0;
     padding: 1em;
+}
+
+#stats > .stats-row {
+    display: flex;
+    flex-direction: row;
 }
 
 #stats p {
@@ -143,14 +148,37 @@ button {
 
 .checked {
     color: orange;
-  }
+}
+
+#stats > #chem {
+    padding-top: 1em;
+}
+
+.bar {
+    width: 100%;
+    height: 1em;
+    margin-top: 0.5em;
+    background-color: white;
+}
+
+.bar-filled {
+    background-color: orange;
+    height: 1em;
+    transition: all 1s ease-in-out;
+}
+
+#bar-1 {
+    width: 0%;
+}
 
 #pitch {
     position: relative;
-    background-image: url(img/3x/background-graphics@3x.png);
     top: -6em; 
-    background-size: cover;
-    background-position: center;
+    background-image: url(img/3x/footballpitch3-cutout.png);
+    background-size: contain;
+    background-position: top;
+    background-position-y: 6em;
+    background-repeat: no-repeat;
     z-index: -1;
 }
 
@@ -167,6 +195,7 @@ button {
     margin: auto;
     max-width: 10em;
     padding: 1em;
+    filter: drop-shadow(0rem 1rem 0.5rem #000000);
 }
 
 #player-14 {
@@ -244,7 +273,7 @@ button {
     bottom: 0;
     left: 0;
     background-color: var(--altdark);
-    opacity: 50%;
+    opacity: 80%;
     font-size: small;
     padding: 1em;
 }
