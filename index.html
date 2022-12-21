@@ -9,112 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="script.js"></script>
-    <title>Drafto</title>
+    <title>Animal Draft</title>
 </head>
 <body>
-    <div id="content">
+    <div class="content">
         <div id="header"></div>
-        <div id="main">
-            <div id="title">
-                <h2>Dec 6 2022</h2>
-                <h1>Welcome to the alpha of Animal Draft</h1>
-                <input type="text" placeholder="TEAM NAME">
+        <div id="title">
+            <h2>Dec 6 2022</h2>
+            <h1>Welcome to the alpha of Animal Draft</h1>
+            <h2>Last Updated 21/12/2022&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+        </div>
+        <div class="main centercenter" id="index-main">
+            <div class="index-intro">
+                <h1>Welcome to Animal Draft</h1>
+                <h3>How many players would you like on the team?</h3>
             </div>
-            <div id="stats">
-                <div class="stats-row">
-                    <p>Rating:&nbsp;</p>
-                    <p id="rating-score">0</p>
-                </div>
-                <div id="rating-stars">
-                    <span id="star1" class="fa fa-star checked"></span>
-                    <span id="star2" class="fa fa-star"></span>
-                    <span id="star3" class="fa fa-star"></span>
-                    <span id="star4" class="fa fa-star"></span>
-                    <span id="star5" class="fa fa-star"></span>
-                </div>
-                <div class="stats-row" id="chem">
-                    <p>Chem:&nbsp;</p>
-                    <p id="chem-score">0</p>
-                </div>
-                <div class="rating-chem-bar">
-                    <div class="bar">
-                        <div class="bar-filled" id="bar-1">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="selection" class="">
-                <p class="select-main">Please select a button below to choose a player</p>
-                <div class="select-main" id="generate">
-                    <button id="generate-btn" onClick="pickthree(1)">GENERATE OPTIONS</button>
-                </div>
-                <div class="select-main" id="options" class="hidden">
-                    <button onclick="chosen(0)" class="option" id="option1"></button>
-                    <button onclick="chosen(1)" class="option" id="option2"></button>
-                    <button onclick="chosen(2)" class="option" id="option3"></button>
-                </div>
-                <div id="selection-toggle">
-                    <button onclick="hide()" id="hide-select">HIDE/SHOW PLAYER PICK</button>
-                </div>
-            </div>
-            <div id="pitch">
-                <div id="players">
-                    <img src="img/1x/LW-defaultcard.png" alt="LW" id="player-14">
-                    <img src="img/1x/ST-defaultcard.png" alt="ST" id="player-13">
-                    <img src="img/1x/RW-defaultcard.png" alt="RW" id="player-12">
-                    <img src="img/1x/LM-defaultcard.png" alt="LM" id="player-11">
-                    <img src="img/1x/CM-defaultcard.png" alt="CM" id="player-10">
-                    <img src="img/1x/RM-defaultcard.png" alt="RM" id="player-9">
-                    <img src="img/1x/LB-defaultcard.png" alt="LB" id="player-8">
-                    <img src="img/1x/CB1-defaultcard.png" alt="CB" id="player-7">
-                    <img src="img/1x/CB2-defaultcard.png" alt="CB" id="player-6">
-                    <img src="img/1x/RB-defaultcard.png" alt="RB" id="player-5">
-                    <img src="img/1x/GK-defaultcard.png" alt="GK" id="player-4">
-                    <img src="img/1x/SUB1-defaultcard.png" alt="SUB" id="player-3">
-                    <img src="img/1x/SUB2-defaultcard.png" alt="SUB" id="player-2">
-                    <img src="img/1x/SUB3-defaultcard.png" alt="SUB" id="player-1">
-                </div>
-            </div>
-            <div id="posswaps">
-                <form id="posswaps-form" onsubmit="return false">
-                    <p id="postitle">Move a Player</p>
-                    <label for="FROM">From:</label>
-                    <select id="from-pos" name="FROM" size="3">
-                        <option value="14">LW</option>
-                        <option value="13">ST</option>
-                        <option value="12">RW</option>
-                        <option value="11">LM</option>
-                        <option value="10">CM</option>
-                        <option value="9">RM</option>
-                        <option value="8">LB</option>
-                        <option value="7">LCB</option>
-                        <option value="6">RCB</option>
-                        <option value="5">RB</option>
-                        <option value="4">GK</option>
-                        <option value="3">SUB1</option>
-                        <option value="2">SUB2</option>
-                        <option value="1">SUB3</option>
-                    </select>
-                    <label for="TO">To:</label>
-                    <select id="to-pos" name="TO" size="3">
-                        <option value="14">LW</option>
-                        <option value="13">ST</option>
-                        <option value="12">RW</option>
-                        <option value="11">LM</option>
-                        <option value="10">CM</option>
-                        <option value="9">RM</option>
-                        <option value="8">LB</option>
-                        <option value="7">LCB</option>
-                        <option value="6">RCB</option>
-                        <option value="5">RB</option>
-                        <option value="4">GK</option>
-                        <option value="3">SUB1</option>
-                        <option value="2">SUB2</option>
-                        <option value="1">SUB3</option>
-                    </select>
-                    <button onclick="posSwap()">SWAP</button>
-                </form>
+            <div class="navigation-options">
+                <a href="5-aside.html"><button>5-a-Side</button></a>
+                <a href="8-aside.html"><button>8-a-Side</button></a>
+                <a href="11-aside.html"><button>11-a-Side</button></a>
             </div>
         </div>
     </div>
