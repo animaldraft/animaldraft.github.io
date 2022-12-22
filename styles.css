@@ -5,12 +5,13 @@
     --grey: #4a4c49;
     --altdark: #62929E;
     --altlight: #99cbb2;
+    --titlebackdrop: #518f53;
     color: #393d3f;
 }
 
 body {
     color: var(--light);
-    background: rgb(228, 255, 228);
+    background-color: #e9edde;
     font-family: 'Bebas Neue', cursive;
     font-family: 'Bellefair', serif;
     font-family: 'Rubik', sans-serif;
@@ -37,16 +38,20 @@ input {
 }
 
 button {
-    background-color: var(--medlight);
-    color: var(--dark);
+    background-color: var(--dark);
+    color: var(--light);
     font-family: 'Bebas Neue', cursive;
-    border-radius: 20px;
+    border-radius: 6px;
     border-color: white;
     padding: 0.5em 1.2em;
 }
 
 .closediv {
     visibility: collapse;
+}
+
+.closed {
+    visibility: hidden;
 }
 
 .shrink {
@@ -95,6 +100,31 @@ button {
 #index-main {
     display: flex;
     flex-direction: column;
+    background-image: url(img/3x/indexcover.png);
+    background-size: contain;
+    background-position: center;
+    background-position-y: 6em;
+    background-repeat: no-repeat;
+    background-color: var(--titlebackdrop);
+}
+
+.navigation-options {
+    position: relative;
+    bottom: -14em;
+}
+
+.navigation-options button {
+    font-size: 1.3em;
+    margin: 0.39em;
+    background-color: #30452eba;
+    color: var(--light)
+}
+
+.navigation-options button:active {
+    font-size: 1.3em;
+    margin: 0.39em;
+    background-color: var(--light);
+    color: var(--altdark)
 }
 
 #selection {
@@ -106,6 +136,7 @@ button {
     right: 0;
     bottom: 0;
     padding: 0.5em;
+    padding-top: 1.8em;
     background-color: var(--altdark);
     opacity: 90%;
 }
@@ -154,9 +185,10 @@ button {
     padding: 1em;
 }
 
-#stats > .stats-row {
+.stats-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 #stats p {
@@ -188,6 +220,11 @@ button {
     transition: all 1s ease-in-out;
 }
 
+.summary-bar-filled {
+    background-color: orange;
+    height: 1em;
+}
+
 #bar-1 {
     width: 0%;
 }
@@ -195,7 +232,7 @@ button {
 .pitch {
     position: relative;
     top: -8em; 
-    background-image: url(img/3x/footballpitch3-cutout.png);
+    background-image: url(img/3x/footballpitchv4.png);
     background-size: contain;
     background-position: top;
     background-position-y: 8em;
@@ -418,3 +455,77 @@ select {
     color: var(--light);
     font-weight: 500;
 }
+
+#summary-backdrop {
+    position: fixed;
+    top: 3.5em;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+
+#summary {
+    background-color: var(--titlebackdrop);
+    width: 70vw;
+    height: 60vh;
+    position: fixed;
+    top: 20vh;
+    left: 15vw;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}
+
+#summary-header {
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+}
+
+#summary-body {
+    display: grid;
+    grid-template-columns: 70fr 30fr;
+    width: 70vw;
+}
+
+#top-players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+    padding-left: 2em;
+}
+
+#summary-numbers {
+    padding-top: 1em;
+}
+
+#top-players-sbs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.top-player-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#summary-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+#summary-stats .bar {
+    width: 45%;
+}
+
+.top-player-slot img {
+    width: 14vw;
+}
+
+#summary-score {
+    padding-top: 1em;
+}
+
+

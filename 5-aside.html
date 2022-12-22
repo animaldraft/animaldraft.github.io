@@ -97,6 +97,67 @@
                     <button onclick="posSwap()">SWAP</button>
                 </form>
             </div>
+            <div id="summary-backdrop" class="closed">
+                <div id="summary">
+                    <div id="summary-header">
+                        <h2>Draft Summary</h2>
+                    </div>
+                    <div id="summary-body">
+                        <div id="top-players">
+                            <h2>TOP PLAYERS</h2>
+                            <div id="top-players-sbs">
+                                <div class="top-player-slot">
+                                    <h3>FWD</h3>
+                                    <img id="starFWD" src="img/1x/player0.png" alt="Top Rated FWD">
+                                </div>
+                                <div class="top-player-slot">
+                                    <h3>MID</h3>
+                                    <img id="starMID" src="img/1x/player18.png" alt="Top Rated MID">
+                                </div>
+                                <div class="top-player-slot">
+                                    <h3>DEF/GK</h3>
+                                    <img id="starDEFGK" src="img/1x/player23.png" alt="Top Rated DEF/GK">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="summary-numbers">
+                            <div id="team-rating">
+                                <div id="summary-stats">
+                                    <div class="stats-row">
+                                        <p>Rating:&nbsp;</p>
+                                        <p id="summary-rating-score">0</p>
+                                    </div>
+                                    <div id="summary-rating-stars">
+                                        <span id="sstar1" class="fa fa-star checked"></span>
+                                        <span id="sstar2" class="fa fa-star"></span>
+                                        <span id="sstar3" class="fa fa-star"></span>
+                                        <span id="sstar4" class="fa fa-star"></span>
+                                        <span id="sstar5" class="fa fa-star"></span>
+                                    </div>
+                                    <div class="stats-row" id="chem">
+                                        <p>Chem:&nbsp;</p>
+                                        <p id="summary-chem-score">100</p>
+                                    </div>
+                                    <div class="summary-rating-chem-bar">
+                                        <div class="bar">
+                                            <div class="summary-bar-filled" id="bar-2"></div>
+                                        </div>
+                                    </div>
+                                    <div id="summary-score">
+                                        <p>Total Score:&nbsp;</p>
+                                        <h2 id="summary-score-val">0/200</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="transfer-budget">
+                                <p>Transfer budget:&nbsp;</p>
+                                <p id="transfer-budget-val">$0.00</p>
+                            </div>
+                            <button onclick="closeSummary()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

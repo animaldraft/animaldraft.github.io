@@ -25,9 +25,9 @@ function stars(starcount) {
         i+=1;
     }
     if (starcount>=1) {
-        document.getElementById("star1").classList.add("checked")
+        document.getElementById("star1").classList.add("checked");
     } if (starcount>=2) {
-        document.getElementById("star2").classList.add("checked")
+        document.getElementById("star2").classList.add("checked");
     } if (starcount >=3) {
         document.getElementById("star3").classList.add("checked");
     } if (starcount >=4) {
@@ -128,6 +128,8 @@ function pickthree() {
     } else {
         // do something here that greys out the box
         console.log("Team complete!");
+        generatesummary();
+        document.getElementById("summary-backdrop").classList.toggle("closed");
         document.getElementById("selection").classList.toggle('closediv');
         return;
     }
@@ -136,15 +138,18 @@ function pickthree() {
     setTimeout(()=> {
         document.getElementById("option1").innerHTML = '<img src="img/1x/player'+playeroptions[0]+'.png" alt="Player Card">';
     }
-    ,1000);
+    ,500);
     setTimeout(()=> {
         document.getElementById("option2").innerHTML = '<img src="img/1x/player'+playeroptions[1]+'.png" alt="Player Card">';
     }
-    ,2000);
+    ,1000);
     setTimeout(()=> {
         document.getElementById("option3").innerHTML = '<img src="img/1x/player'+playeroptions[2]+'.png" alt="Player Card">';
     }   
-    ,3000);
+    ,1500);
+    if (playerspicked.length == 13) {
+        document.getElementById("generate-btn").innerHTML = "COMPLETE THE TEAM";
+    }
 }
 
 function chosen(playerindex) {
@@ -188,5 +193,106 @@ function posSwap() {
 
     $(player_from).attr("src",photo_to); // swap
     $(player_to).attr("src",photo_from); // swap
+}
+
+function closeSummary() {
+    document.getElementById("summary-backdrop").classList.toggle("closed");
+    console.log("Summary was closed");
+}
+
+function generatesummary() {
+    var i=0;
+    var sum=0;
+    const l = playerspicked.length;
+    console.log("l = "+l);
+    while (i<l) {
+        sum += playerratings[(playerspicked[i])];
+        console.log(sum);
+        i++;
+    }
+    var rating = Math.round(sum/l);
+    console.log(rating);
+    document.getElementById("summary-rating-score").innerHTML = rating;
+    if (rating < 50) {
+        summarystars(1);
+    } else if (rating < 65) {
+        summarystars(2);
+    } else if (rating < 75) {
+        summarystars(3);
+    } else if (rating < 85) {
+        summarystars(4);
+    } else {
+        summarystars(5);
+    }
+    topplayers();
+    return;
+}
+
+function topplayers() {
+    var bestFWD;
+    var bestMID;
+    var bestDEFGK;
+    var bestFWDRating = 0;
+    var bestMIDRating = 0;
+    var bestDEFGKRating = 0;
+    //find highest rated FWD
+    var i=0;
+    while (i < playerspicked.length) {
+        var player = playerspicked[i];
+        if (player < NUMSTRIKERS) {
+            if (playerratings[player] > bestFWDRating) {
+                bestFWD = player;
+                bestFWDRating = playerratings[player];
+            }
+        } else if (player < (NUMSTRIKERS+NUMMIDS)) {
+            if (playerratings[player] > bestMIDRating) {
+                bestMID = player;
+                bestMIDRating = playerratings[player];
+            }
+        } else {
+            if (playerratings[player] > bestDEFGKRating) {
+                bestDEFGK = player;
+                bestDEFGKRating = playerratings[player];
+            }
+        }
+        console.log(bestFWD, bestMID, bestDEFGK);
+        i+=1;
+    }
+
+    $("#starFWD").attr("src",'img/1x/player'+bestFWD+'.png');
+    $("#starMID").attr("src",'img/1x/player'+bestMID+'.png');
+    $("#starDEFGK").attr("src",'img/1x/player'+bestDEFGK+'.png');
+}
+
+function summarystars(starcount) {
+    const stars = document.getElementsByClassName("fa-star");
+    console.log("made it here1");
+    if (starcount>=1) {
+        document.getElementById("sstar1").classList.add("checked");
+    } if (starcount>=2) {
+        document.getElementById("sstar2").classList.add("checked");
+    } if (starcount >=3) {
+        document.getElementById("sstar3").classList.add("checked");
+    } if (starcount >=4) {
+        document.getElementById("sstar4").classList.add("checked");
+    } if (starcount >=5) {
+        document.getElementById("sstar5").classList.add("checked");
+    }
+    // would put the chem summary update here if ever properly implementing! - use bar2
+    var i=0;
+    var sum=0;
+    const l = playerspicked.length;
+    console.log("l = "+l);
+    while (i<l) {
+        sum += playerratings[(playerspicked[i])];
+        console.log(sum);
+        i++;
+    }
+    var rating = Math.round((sum/l)+100);
+    const summary_score = (rating+"/200");
+    document.getElementById("summary-score-val").innerHTML = summary_score;
+    var transfer_budget=0;
+    transfer_budget = randgenerate(10000,1000000) + Math.abs((100-rating)*10000);
+    document.getElementById("transfer-budget-val").innerHTML = "$"+transfer_budget+".00";
 }
 
