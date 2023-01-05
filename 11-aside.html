@@ -59,61 +59,21 @@
             </div>
             <div class="pitch" id="eleven-aside-pitch">
                 <div class="players" id="eleven-aside-players">
-                    <img src="img/1x/LW-defaultcard.png" alt="LW" id="player-14">
-                    <img src="img/1x/ST-defaultcard.png" alt="ST" id="player-13">
-                    <img src="img/1x/RW-defaultcard.png" alt="RW" id="player-12">
-                    <img src="img/1x/LM-defaultcard.png" alt="LM" id="player-11">
-                    <img src="img/1x/CM-defaultcard.png" alt="CM" id="player-10">
-                    <img src="img/1x/RM-defaultcard.png" alt="RM" id="player-9">
-                    <img src="img/1x/LB-defaultcard.png" alt="LB" id="player-8">
-                    <img src="img/1x/CB1-defaultcard.png" alt="CB" id="player-7">
-                    <img src="img/1x/CB2-defaultcard.png" alt="CB" id="player-6">
-                    <img src="img/1x/RB-defaultcard.png" alt="RB" id="player-5">
-                    <img src="img/1x/GK-defaultcard.png" alt="GK" id="player-4">
-                    <img src="img/1x/SUB1-defaultcard.png" alt="SUB" id="player-3">
-                    <img src="img/1x/SUB2-defaultcard.png" alt="SUB" id="player-2">
-                    <img src="img/1x/SUB3-defaultcard.png" alt="SUB" id="player-1">
+                    <img onclick="swapPlayers(14)"src="img/1x/LW-defaultcard.png" alt="LW" id="player-14">
+                    <img onclick="swapPlayers(13)" src="img/1x/ST-defaultcard.png" alt="ST" id="player-13">
+                    <img onclick="swapPlayers(12)" src="img/1x/RW-defaultcard.png" alt="RW" id="player-12">
+                    <img onclick="swapPlayers(11)" src="img/1x/LM-defaultcard.png" alt="LM" id="player-11">
+                    <img onclick="swapPlayers(10)" src="img/1x/CM-defaultcard.png" alt="CM" id="player-10">
+                    <img onclick="swapPlayers(9)" src="img/1x/RM-defaultcard.png" alt="RM" id="player-9">
+                    <img onclick="swapPlayers(8)" src="img/1x/LB-defaultcard.png" alt="LB" id="player-8">
+                    <img onclick="swapPlayers(7)" src="img/1x/CB1-defaultcard.png" alt="CB" id="player-7">
+                    <img onclick="swapPlayers(6)" src="img/1x/CB2-defaultcard.png" alt="CB" id="player-6">
+                    <img onclick="swapPlayers(5)" src="img/1x/RB-defaultcard.png" alt="RB" id="player-5">
+                    <img onclick="swapPlayers(4)" src="img/1x/GK-defaultcard.png" alt="GK" id="player-4">
+                    <img onclick="swapPlayers(3)" src="img/1x/SUB1-defaultcard.png" alt="SUB" id="player-3">
+                    <img onclick="swapPlayers(2)" src="img/1x/SUB2-defaultcard.png" alt="SUB" id="player-2">
+                    <img onclick="swapPlayers(1)" src="img/1x/SUB3-defaultcard.png" alt="SUB" id="player-1">
                 </div>
-            </div>
-            <div id="posswaps">
-                <form id="posswaps-form" onsubmit="return false">
-                    <p id="postitle">Move a Player</p>
-                    <label for="FROM">From:</label>
-                    <select id="from-pos" name="FROM" size="3">
-                        <option value="14">LW</option>
-                        <option value="13">ST</option>
-                        <option value="12">RW</option>
-                        <option value="11">LM</option>
-                        <option value="10">CM</option>
-                        <option value="9">RM</option>
-                        <option value="8">LB</option>
-                        <option value="7">LCB</option>
-                        <option value="6">RCB</option>
-                        <option value="5">RB</option>
-                        <option value="4">GK</option>
-                        <option value="3">SUB1</option>
-                        <option value="2">SUB2</option>
-                        <option value="1">SUB3</option>
-                    </select>
-                    <label for="TO">To:</label>
-                    <select id="to-pos" name="TO" size="3">
-                        <option value="14">LW</option>
-                        <option value="13">ST</option>
-                        <option value="12">RW</option>
-                        <option value="11">LM</option>
-                        <option value="10">CM</option>
-                        <option value="9">RM</option>
-                        <option value="8">LB</option>
-                        <option value="7">LCB</option>
-                        <option value="6">RCB</option>
-                        <option value="5">RB</option>
-                        <option value="4">GK</option>
-                        <option value="3">SUB1</option>
-                        <option value="2">SUB2</option>
-                        <option value="1">SUB3</option>
-                    </select>
-                    <button onclick="posSwap()">SWAP</button>
-                </form>
             </div>
             <div id="summary-backdrop" class="closed">
                 <div id="summary">

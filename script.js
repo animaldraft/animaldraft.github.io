@@ -11,6 +11,8 @@ const NUMDEFS = 115;
 const NUMGKS = 35;
 const NUMPLAYERS = NUMSTRIKERS + NUMMIDS + NUMDEFS + NUMGKS;
 
+var SWAPONE = 0;
+var SWAPTWO = 0;
 
 function randgenerate(min, max) {
     document.getElementById("options").classList.remove("hidden");
@@ -43,6 +45,24 @@ function stars(starcount) {
         document.getElementById("chem-score").innerHTML = chem_value;
         const chem_str_value = chem_value+'%';
         document.getElementById("bar-1").style.setProperty("width", chem_str_value);
+    }
+}
+
+function swapPlayers(selectedPlayer) {
+    console.log("Success");
+    console.log(selectedPlayer);
+    if (SWAPONE == 0) {
+        console.log("First selection: "+selectedPlayer);
+        SWAPONE = selectedPlayer;
+    } else if (SWAPTWO == 0) {
+        console.log("Second selection: "+selectedPlayer);
+        SWAPTWO = selectedPlayer;
+        console.log("Swapping "+SWAPONE+" and "+SWAPTWO);
+        posSwap(SWAPONE, SWAPTWO);
+        SWAPONE = 0;
+        SWAPTWO = 0;
+    } else {
+        console.log("Error")
     }
 }
 
@@ -180,9 +200,7 @@ function hide() {
 }
 
 //form for swapping players (copied code snippets)
-function posSwap() {
-    const from = document.getElementById("posswaps-form").elements[0].value;
-    const to = document.getElementById("posswaps-form").elements[1].value;
+function posSwap(from, to) {
     console.log("swapping between "+from+","+to);
 
     const player_from = "#player-"+from; // the LW's id
